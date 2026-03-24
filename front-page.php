@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <h2 class="text-4xl sm:text-5xl! text-center">Latest Posts</h2>
+                <h2 class="text-5xl text-center">Latest Posts</h2>
                 <p class="text-center">View the latest posts from across the blog</p>
             </section>
         </div>
