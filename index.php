@@ -1,21 +1,35 @@
-<?php get_header(); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 
-<main class="site-content">
-    <?php if ( have_posts() ) : ?>
-        <?php while ( have_posts() ) : the_post(); ?>
-            <article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <h2 class="post-title">
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                </h2>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php wp_head(); ?>
+</head>
 
-                <div class="post-content">
-                    <?php the_content(); ?>
-                </div>
-            </article>
-        <?php endwhile; ?>
-    <?php else : ?>
-        <p>No posts found.</p>
-    <?php endif; ?>
-</main>
+<body class="min-h-screen">
 
-<?php get_footer(); ?>
+    <?php get_header(); ?>
+
+    <main class="site-content">
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <article class="post px-5 max-w-4xl mx-auto border-b pb-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <h2 class="text-4xl!">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h2>
+                    <div>
+                        <?php the_content(); ?>
+                    </div>
+                </article>
+            <?php endwhile; ?>
+        <?php else : ?>
+            <p>No posts found.</p>
+        <?php endif; ?>
+    </main>
+
+    <?php get_footer(); ?>
+
+</body>
+
+</html>

@@ -4,9 +4,15 @@
   "description": "The WordPress theme for my personal blog, BiteByte.",
   "author": "Richard James",
   "scripts": {
-    "deploy": "cp -r ./* /var/www/blog/wp-content/themes/wordpress-bitebyte-theme"
+    "dev": "npx chokidar '**/*' -c 'npm run build && npm run deploy'",
+    "deploy": "npm run build && rm -r /var/www/blog/wp-content/themes/wordpress-bitebyte-theme/* && cp -r ./* /var/www/blog/wp-content/themes/wordpress-bitebyte-theme",
+    "build": "npx @tailwindcss/cli -i style.css -o assets/css/tailwind.css"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
     "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
   }
 }

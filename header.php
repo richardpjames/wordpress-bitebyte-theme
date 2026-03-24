@@ -1,17 +1,20 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
 
-<header class="site-header">
-    <h1>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <?php bloginfo( 'name' ); ?>
-        </a>
-    </h1>
-    <p><?php bloginfo( 'description' ); ?></p>
-</header>
+    <header class="justify-between items-center bg-gray-900 text-white py-2 px-2">
+        <div class="flex flex-row justify-between max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold mb-2">
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    ✍🏼 <?php bloginfo('name'); ?>
+                </a>
+            </h1>
+            <div class="flex items-center">
+                <?php $categories = get_categories();
+                foreach ($categories as $category) : ?>
+
+                    <a href="<?php echo get_category_link($category->term_id); ?>" class="mx-3">
+                        <?php echo $category->name; ?>
+                    </a>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </header>

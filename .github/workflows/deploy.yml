@@ -24,4 +24,5 @@ jobs:
               cd /var/www/blog/wp-content/themes/wordpress-bitebyte-theme
               git fetch origin
               git reset --hard origin/main
+              npm run build
           EOF
