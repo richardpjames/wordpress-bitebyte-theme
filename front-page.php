@@ -24,7 +24,7 @@
                 <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
                     <article class="rounded-lg border p-5 m-2 col-span-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div>
-                            <h2 class="text-4xl!">
+                            <h2 class="text-2xl!">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
                             <div class="text-sm">
