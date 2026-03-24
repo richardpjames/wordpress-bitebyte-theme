@@ -10,6 +10,9 @@ add_action('wp_enqueue_scripts', 'enqueue_styles');
 function setup()
 {
     add_theme_support('title-tag');
+    register_nav_menus(array(
+            'main' => 'Main Menu',
+        ));
 }
 
 add_action('after_setup_theme', 'setup');

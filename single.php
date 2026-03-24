@@ -3,7 +3,7 @@
     <main class="site-content">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <article class="post px-5 max-w-4xl mx-auto border-b pb-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <article class="post px-5 max-w-4xl mx-auto pb-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <h2 class="text-4xl!">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h2>

@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php wp_head(); ?>
+</head>
+
+<body class="min-h-screen">
 
     <header class="justify-between items-center bg-gray-900 text-white py-2 px-2">
         <div class="flex flex-row justify-between max-w-4xl mx-auto">
@@ -7,16 +17,23 @@
                 </a>
             </h1>
             <div class="flex items-center">
-                <?php $categories = get_categories();
-                foreach ($categories as $category) : ?>
+                <?php $locations = get_nav_menu_locations();
 
-                    <a href="<?php echo get_category_link($category->term_id); ?>" class="mx-3">
-                        <?php if($category->name == 'Food') echo '🍩'; ?>
-                        <?php if($category->name == 'Technology') echo '💻 '; ?>
-                        <?php echo $category->name; ?>
-                    </a>
+                if (isset($locations['main'])) {
+                    $items = wp_get_nav_menu_items($locations['main']);
 
-                <?php endforeach; ?>
+                    foreach ($items as $item) : ?>
+
+                        <a href="<?php echo $item->url; ?>" class="mx-3">
+                            <?php if ($item->title == 'Food') echo '🍩'; ?>
+                            <?php if ($item->title == 'Technology') echo '💻'; ?>
+                            <?php echo $item->title; ?>
+                        </a>
+
+                <?php
+                    endforeach;
+                }
+                ?>
             </div>
         </div>
     </header>
