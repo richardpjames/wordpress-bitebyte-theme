@@ -11,6 +11,8 @@
                 foreach ($categories as $category) : ?>
 
                     <a href="<?php echo get_category_link($category->term_id); ?>" class="mx-3">
+                        <?php if($category->name == 'Food') echo '🍩'; ?>
+                        <?php if($category->name == 'Technology') echo '💻 '; ?>
                         <?php echo $category->name; ?>
                     </a>
 
