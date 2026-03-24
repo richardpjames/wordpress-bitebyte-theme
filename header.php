@@ -9,7 +9,7 @@
 
 <body class="min-h-screen bg-gray-900 text-white">
 
-    <header class="justify-between items-center  py-2 px-2">
+    <header class="justify-between items-center py-2 px-2 border-b border-gray-700">
         <div class="flex flex-row justify-between  mx-auto">
             <h1 class="text-4xl font-bold mb-2">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -25,8 +25,8 @@
                     foreach ($items as $item) : ?>
 
                         <a href="<?php echo $item->url; ?>" class="mx-3">
-                            <?php if ($item->title == 'Food') echo '<i class="fa-solid fa-burger text-yellow-400"></i>'; ?>
-                            <?php if ($item->title == 'Technology') echo '<i class="fa-solid fa-laptop text-yellow-400"></i>'; ?>
+                            <?php if ($item->title == 'Food') echo '<i class="fa-solid fa-burger"></i>'; ?>
+                            <?php if ($item->title == 'Technology') echo '<i class="fa-solid fa-laptop"></i>'; ?>
                             <?php echo $item->title; ?>
                         </a>
 

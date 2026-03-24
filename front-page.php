@@ -11,12 +11,12 @@
                     <div class="relative z-10 p-8 text-gray-900">
                         <div class="mx-auto py-24 md:py-56">
                             <h1 class="text-7xl text-center">Bite // Byte</h1>
-                            <p class="text-xl text-center pt-5">Welcome to my personal blog where I discuss food and technology and showcase some of my latest projects covering Laravel, React, WordPress and web development.</p>
-                            <p class="text-5xl text-bold text-center pt-5">
+                            <p class="text-xl text-center pt-5 text-gray-900!">Welcome to my personal blog where I discuss food and technology and showcase some of my latest projects covering Laravel, React, WordPress and web development.</p>
+                            <p class="text-5xl text-bold text-center pt-5 text-gray-900!">
                                 <i class="fa-solid fa-burger"></i>
-                                <i class="fa-brands fa-laravel"></i>
-                                <i class="fa-solid fa-pizza-slice"></i>
                                 <i class="fa-brands fa-html5"></i>
+                                <i class="fa-solid fa-pizza-slice"></i>
+                                <i class="fa-brands fa-css"></i>
                                 <i class="fa-solid fa-martini-glass-empty"></i>
                                 <i class="fa-brands fa-square-js"></i>
                             </p>
@@ -41,12 +41,12 @@
 
             <div class="max-w-7xl mx-auto px-5 mb-5 grid grid-cols-1 md:grid-cols-3">
                 <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
-                    <article class="rounded-lg border p-5 m-2 col-span-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <article class="rounded-2xl border border-gray-700 p-5 m-2 col-span-1 bg-gray-800" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div>
-                            <h2 class="text-2xl! text-yellow-400">
+                            <h2 class="mt-2 text-lg text-white max-lg:text-center">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
-                            <div class="text-sm">
+                            <div class="mt-2 max-w-lg text-sm/6">
                                 <?php the_excerpt(); ?>
                             </div>
                         </div>

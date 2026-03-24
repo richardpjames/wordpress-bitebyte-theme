@@ -4,7 +4,7 @@
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
                 <article class="post px-5  mx-auto pb-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    <h2 class="text-4xl! text-yellow-400">
+                    <h2 class="text-4xl!">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h2>
                     <div>
