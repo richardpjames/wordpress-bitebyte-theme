@@ -26,6 +26,10 @@ body {
     @apply font-display text-base leading-relaxed;
 }
 
+p, li, ol, h1, h2, h3, h4, h5, h6 {
+    @apply font-normal!;
+}
+
 h2 {
     @apply text-2xl font-bold my-4;
 }

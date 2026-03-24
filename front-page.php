@@ -2,11 +2,26 @@
 
     <main class="site-content">
 
-        <?php
-        if (have_posts()) : ?>
-
-            <div class="max-w-4xl mx-auto px-5 mt-10 mb-5 grid grid-cols-3">
+        <div class="max-w-4xl mx-auto px-5">
+            <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
+                    <section class="page-content">
+                        <?php the_content(); ?>
+                    </section>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+
+        <?php
+        $recent_posts = new WP_Query(array(
+            'post_type' => 'post',
+            'posts_per_page' => 6,
+        ));
+
+        if ($recent_posts->have_posts()) : ?>
+
+            <div class="max-w-4xl mx-auto px-5 mb-5 grid grid-cols-3">
+                <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
                     <article class="rounded rounded-lg border p-5 m-2 col-span-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div>
                             <h2 class="text-4xl!">
@@ -23,6 +38,8 @@
                 <p class="text-center">Sorry, the page you are looking for does not exist.</p>
             <?php endif; ?>
             </div>
+
+            <?php wp_reset_postdata(); ?>
 
     </main>
 
