@@ -25,8 +25,8 @@
                     foreach ($items as $item) : ?>
 
                         <a href="<?php echo $item->url; ?>" class="mx-3">
-                            <?php if ($item->title == 'Food') echo '🍩'; ?>
-                            <?php if ($item->title == 'Technology') echo '💻'; ?>
+                            <?php if ($item->title == 'Food') echo '<i class="fa-solid fa-burger text-yellow-400"></i>'; ?>
+                            <?php if ($item->title == 'Technology') echo '<i class="fa-solid fa-laptop text-yellow-400"></i>'; ?>
                             <?php echo $item->title; ?>
                         </a>
 

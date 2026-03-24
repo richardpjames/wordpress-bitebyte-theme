@@ -11,8 +11,8 @@ function setup()
 {
     add_theme_support('title-tag');
     register_nav_menus(array(
-            'main' => 'Main Menu',
-        ));
+        'main' => 'Main Menu',
+    ));
 }
 
 add_action('after_setup_theme', 'setup');

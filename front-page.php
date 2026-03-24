@@ -9,9 +9,17 @@
                         style="background-image: url('/wp-content/uploads/2026/03/front-background.jpg');"></div>
 
                     <div class="relative z-10 p-8 text-gray-900">
-                        <div class="mx-auto py-56">
+                        <div class="mx-auto py-24 md:py-56">
                             <h1 class="text-7xl text-center">Bite // Byte</h1>
-                            <p class="text-xl text-center">Welcome to my personal blog where I discuss food and technology and showcase some of my latest projects covering Laravel, React, WordPress and web development.</p>
+                            <p class="text-xl text-center pt-5">Welcome to my personal blog where I discuss food and technology and showcase some of my latest projects covering Laravel, React, WordPress and web development.</p>
+                            <p class="text-5xl text-bold text-center pt-5">
+                                <i class="fa-solid fa-burger"></i>
+                                <i class="fa-brands fa-laravel"></i>
+                                <i class="fa-solid fa-pizza-slice"></i>
+                                <i class="fa-brands fa-html5"></i>
+                                <i class="fa-solid fa-martini-glass-empty"></i>
+                                <i class="fa-brands fa-react"></i>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -35,7 +43,7 @@
                 <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
                     <article class="rounded-lg border p-5 m-2 col-span-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div>
-                            <h2 class="text-2xl!">
+                            <h2 class="text-2xl! text-yellow-400">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
                             <div class="text-sm">
