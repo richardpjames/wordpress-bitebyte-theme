@@ -3,14 +3,25 @@
     <main class="site-content">
 
         <div class=" mx-auto px-5">
-            <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : the_post(); ?>
-                    <section class="page-content">
-                        <?php the_content(); ?>
-                    </section>
-                <?php endwhile; ?>
-            <?php endif; ?>
+            <section class="page-content">
+                <div class="relative overflow-hidden rounded-xl mt-5">
+                    <div class="absolute inset-0 bg-cover bg-center"
+                        style="background-image: url('/wp-content/uploads/2026/03/front-background.jpg');"></div>
+
+                    <div class="relative z-10 p-8 text-white">
+                        <div class="mx-auto py-56">
+                            <h1 class="text-7xl text-center">Bite // Byte</h1>
+                            <p class="text-xl text-center">Welcome to my personal blog where I discuss food and technology and showcase some of my latest projects covering Laravel, React, WordPress and web development.</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-4xl!">Latest Posts</h2>
+                <p>View the latest posts from across the blog</p>
+            </section>
         </div>
+
+
+
 
         <?php
         $recent_posts = new WP_Query(array(
