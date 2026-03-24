@@ -15,6 +15,10 @@ Tags: blog, custom-theme, responsive
 @import "tailwindcss";
 
 @source inline("text-*");
+@source inline("py-*");
+@source inline("px-*");
+@source inline("my-*");
+@source inline("mx-*");
 
 @theme {
     --font-display: "Inter", sans-serif;
