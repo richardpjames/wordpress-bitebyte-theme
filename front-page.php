@@ -18,7 +18,7 @@
                                 <i class="fa-solid fa-pizza-slice"></i>
                                 <i class="fa-brands fa-html5"></i>
                                 <i class="fa-solid fa-martini-glass-empty"></i>
-                                <i class="fa-brands fa-react"></i>
+                                <i class="fa-brands fa-square-js"></i>
                             </p>
                         </div>
                     </div>
