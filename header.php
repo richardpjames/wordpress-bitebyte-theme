@@ -10,13 +10,13 @@
 <body class="min-h-screen bg-gray-900 text-white">
 
     <header class="justify-between items-center py-2 px-2 border-b border-gray-700">
-        <div class="flex flex-row justify-between  mx-auto">
-            <h1 class="text-4xl font-bold mb-2">
+        <div class="flex flex-col sm:flex-row justify-between  mx-auto">
+            <h1 class="text-4xl text-center sm:text-left font-bold mb-2">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php bloginfo('name'); ?>
                 </a>
             </h1>
-            <div class="flex items-center">
+            <div class="flex items-center flex-col sm:flex-row">
                 <?php $locations = get_nav_menu_locations();
 
                 if (isset($locations['main'])) {

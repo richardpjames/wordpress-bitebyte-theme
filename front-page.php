@@ -10,9 +10,9 @@
 
                     <div class="relative z-10 p-8 text-gray-900">
                         <div class="mx-auto py-24 md:py-56">
-                            <h1 class="text-7xl text-center">Bite // Byte</h1>
-                            <p class="text-xl text-center pt-5 text-gray-900!">Welcome to my personal blog where I discuss food and technology and showcase some of my latest projects covering Laravel, React, WordPress and web development.</p>
-                            <p class="text-5xl text-bold text-center pt-5 text-gray-900!">
+                            <h1 class="text-6xl sm:text-7xl text-center">Bite // Byte</h1>
+                            <p class="text-l sm:text-xl text-center pt-5 text-gray-900!">Welcome to my personal blog where I discuss food and technology and showcase some of my latest projects covering Laravel, React, WordPress and web development.</p>
+                            <p class="text-3xl sm:text-5xl text-bold text-center pt-5 text-gray-900!">
                                 <i class="fa-solid fa-burger"></i>
                                 <i class="fa-brands fa-html5"></i>
                                 <i class="fa-solid fa-pizza-slice"></i>
@@ -23,8 +23,8 @@
                         </div>
                     </div>
                 </div>
-                <h2 class="text-4xl!">Latest Posts</h2>
-                <p>View the latest posts from across the blog</p>
+                <h2 class="text-4xl sm:text-5xl! text-center">Latest Posts</h2>
+                <p class="text-center">View the latest posts from across the blog</p>
             </section>
         </div>
 

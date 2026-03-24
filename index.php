@@ -5,7 +5,7 @@
         <?php
         if (have_posts()) : ?>
 
-            <div class=" mx-auto px-5 mt-10 mb-5 grid grid-cols-1 md:grid-cols-3">
+            <div class=" mx-auto px-5 mt-5 mb-5 grid grid-cols-1 md:grid-cols-3">
                 <?php while (have_posts()) : the_post(); ?>
                     <article class="rounded-2xl border border-gray-700 p-5 m-2 col-span-1 bg-gray-800" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div>
