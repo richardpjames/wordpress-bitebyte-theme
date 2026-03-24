@@ -3,7 +3,7 @@
         <div class="flex flex-row justify-between max-w-4xl mx-auto">
             <h1 class="text-4xl font-bold mb-2">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    ✍🏼 <?php bloginfo('name'); ?>
+                    <?php bloginfo('name'); ?>
                 </a>
             </h1>
             <div class="flex items-center">
