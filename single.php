@@ -1,6 +1,6 @@
     <?php get_header(); ?>
 
-    <main class="site-content">
+    <main class="site-content max-w-7xl mx-auto">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
                 <article class="post px-5  mx-auto pb-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

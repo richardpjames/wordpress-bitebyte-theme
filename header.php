@@ -7,9 +7,9 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen bg-gray-900 text-white">
 
-    <header class="justify-between items-center bg-gray-900 text-white py-2 px-2">
+    <header class="justify-between items-center  py-2 px-2">
         <div class="flex flex-row justify-between  mx-auto">
             <h1 class="text-4xl font-bold mb-2">
                 <a href="<?php echo esc_url(home_url('/')); ?>">

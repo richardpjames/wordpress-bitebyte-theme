@@ -1,11 +1,11 @@
     <?php get_header(); ?>
 
-    <main class="site-content">
+    <main class="site-content max-w-7xl mx-auto">
 
         <?php
         if (have_posts()) : ?>
 
-            <div class=" mx-auto px-5 mt-10 mb-5 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6">
+            <div class=" mx-auto px-5 mt-10 mb-5 grid grid-cols-1 md:grid-cols-3">
                 <?php while (have_posts()) : the_post(); ?>
                     <article class="rounded-lg border p-5 m-2 col-span-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div>

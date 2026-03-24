@@ -2,13 +2,13 @@
 
     <main class="site-content">
 
-        <div class=" mx-auto px-5">
+        <div class="max-w-7xl mx-auto px-5">
             <section class="page-content">
-                <div class="relative overflow-hidden rounded-xl mt-5">
+                <div class="relative overflow-hidden rounded-xl mt-5 ">
                     <div class="absolute inset-0 bg-cover bg-center"
                         style="background-image: url('/wp-content/uploads/2026/03/front-background.jpg');"></div>
 
-                    <div class="relative z-10 p-8 text-white">
+                    <div class="relative z-10 p-8 text-gray-900">
                         <div class="mx-auto py-56">
                             <h1 class="text-7xl text-center">Bite // Byte</h1>
                             <p class="text-xl text-center">Welcome to my personal blog where I discuss food and technology and showcase some of my latest projects covering Laravel, React, WordPress and web development.</p>
@@ -31,7 +31,7 @@
 
         if ($recent_posts->have_posts()) : ?>
 
-            <div class=" mx-auto px-5 mb-5 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6">
+            <div class="max-w-7xl mx-auto px-5 mb-5 grid grid-cols-1 md:grid-cols-3">
                 <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
                     <article class="rounded-lg border p-5 m-2 col-span-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div>
