@@ -24,7 +24,8 @@
                 </article>
             <?php endwhile; ?>
         <?php else : ?>
-            <p>No posts found.</p>
+            <p class="text-6xl px-5 max-w-4xl mx-auto text-center pb-5">404</p>
+            <p class="text-center">Sorry, the page you are looking for does not exist.</p>
         <?php endif; ?>
     </main>
 
