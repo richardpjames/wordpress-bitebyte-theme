@@ -5,7 +5,7 @@
         <?php
         if (have_posts()) : ?>
 
-            <div class="max-w-4xl mx-auto px-5 mt-10 mb-5 grid grid-cols-3">
+            <div class=" mx-auto px-5 mt-10 mb-5 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6">
                 <?php while (have_posts()) : the_post(); ?>
                     <article class="rounded-lg border p-5 m-2 col-span-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div>
@@ -19,7 +19,7 @@
                     </article>
                 <?php endwhile; ?>
             <?php else : ?>
-                <p class="text-6xl px-5 max-w-4xl mx-auto text-center pb-5">404</p>
+                <p class="text-6xl px-5  mx-auto text-center pb-5">404</p>
                 <p class="text-center">Sorry, the page you are looking for does not exist.</p>
             <?php endif; ?>
             </div>

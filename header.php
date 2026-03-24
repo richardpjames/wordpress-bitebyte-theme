@@ -10,7 +10,7 @@
 <body class="min-h-screen">
 
     <header class="justify-between items-center bg-gray-900 text-white py-2 px-2">
-        <div class="flex flex-row justify-between max-w-4xl mx-auto">
+        <div class="flex flex-row justify-between  mx-auto">
             <h1 class="text-4xl font-bold mb-2">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php bloginfo('name'); ?>
