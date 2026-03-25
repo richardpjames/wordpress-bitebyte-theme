@@ -228,4 +228,3 @@ $current_url = trailingslashit(home_url(add_query_arg([], $wp->request ?? '')));
             }
         });
     </script>
-f
