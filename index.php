@@ -13,7 +13,7 @@
 
         <?php
         if (have_posts()) : ?>
-            <div class=" mx-auto px-5 mt-5 mb-5 grid grid-cols-1 md:grid-cols-3">
+            <div class="mx-auto mt-5 mb-5 grid grid-cols-1 gap-6 px-5 md:grid-cols-3">
                 <?php while (have_posts()) : the_post(); ?>
                     <?php get_template_part('template-parts/post-card', null, [
                         'post_id' => get_the_ID(),
