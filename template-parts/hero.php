@@ -6,7 +6,9 @@
         <div class="relative z-10 p-8 text-gray-900">
             <div class="mx-auto py-12 md:py-12">
                 <h1 class="text-6xl sm:text-7xl text-center"><?php echo $args['heading']; ?></h1>
-                <p class="text-l sm:text-xl text-center pt-5 text-gray-900!"><?php echo $args['text']; ?></p>
+                <?php if (isset($args['text'])) : ?>
+                    <p class="text-l sm:text-xl text-center pt-5 text-gray-900!"><?php echo $args['text']; ?></p>
+                <?php endif; ?>
             </div>
         </div>
     </div>
