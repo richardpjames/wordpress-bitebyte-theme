@@ -24,5 +24,5 @@ jobs:
               cd /var/www/blog/wp-content/themes/wordpress-bitebyte-theme
               git fetch origin
               git reset --hard origin/main
-              /home/richard/.nvm/versions/node/v24.14.0/bin/npm run build
+              npm run build
           EOF
