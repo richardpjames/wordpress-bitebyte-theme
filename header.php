@@ -1,16 +1,9 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> data-theme="dark">
+<html <?php language_attributes(); ?>>
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-        (() => {
-            const storedTheme = localStorage.getItem('site-theme');
-            const theme = storedTheme || 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
     <style>
         :root {
             --site-bg: #0b0f0c;
@@ -30,26 +23,6 @@
             --shadow-color: rgba(0, 0, 0, 0.22);
             --hero-gradient: linear-gradient(135deg, #111815 0%, #101612 52%, #0c110e 100%);
             --hero-radial: radial-gradient(circle at top left, rgba(56, 189, 248, 0.09), transparent 38%), radial-gradient(circle at 82% 18%, rgba(14, 165, 233, 0.05), transparent 28%), radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.03), transparent 34%);
-        }
-
-        html[data-theme="light"] {
-            --site-bg: #f4f7fb;
-            --surface-1: #ffffff;
-            --surface-2: #fcfdff;
-            --surface-3: rgba(15, 23, 42, 0.03);
-            --surface-4: rgba(15, 23, 42, 0.06);
-            --border-color: rgba(15, 23, 42, 0.1);
-            --text-strong: #0f172a;
-            --text-body: #334155;
-            --text-muted: #475569;
-            --text-soft: #64748b;
-            --accent: #075985;
-            --accent-strong: #0369a1;
-            --accent-soft: rgba(3, 105, 161, 0.1);
-            --accent-soft-strong: rgba(3, 105, 161, 0.16);
-            --shadow-color: rgba(15, 23, 42, 0.08);
-            --hero-gradient: linear-gradient(135deg, #f7fbff 0%, #f4f8fd 54%, #eef4fb 100%);
-            --hero-radial: radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 38%), radial-gradient(circle at 82% 18%, rgba(14, 165, 233, 0.05), transparent 26%), radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.04), transparent 34%);
         }
 
         body {
@@ -103,27 +76,6 @@
         .theme-prose a {
             color: var(--accent);
         }
-
-        .theme-toggle-icon-light,
-        html[data-theme="light"] .theme-toggle-icon-dark {
-            display: none;
-        }
-
-        html[data-theme="light"] .theme-toggle-icon-light {
-            display: block;
-        }
-
-        html[data-theme="light"] .theme-toggle-icon-dark {
-            display: none;
-        }
-
-        html[data-theme="dark"] .theme-toggle-icon-light {
-            display: none;
-        }
-
-        html[data-theme="dark"] .theme-toggle-icon-dark {
-            display: block;
-        }
     </style>
     <?php wp_head(); ?>
 </head>
@@ -173,20 +125,6 @@ $current_url = trailingslashit(home_url(add_query_arg([], $wp->request ?? '')));
                 </div>
 
                 <div class="hidden items-center justify-self-end gap-3 lg:flex">
-                    <button
-                        type="button"
-                        class="theme-toggle theme-hover-surface theme-hover-strong inline-flex items-center gap-2 rounded-full border theme-border theme-surface-3 px-4 py-2 text-sm font-medium theme-text-muted transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2"
-                        style="--tw-ring-offset-color: var(--site-bg);"
-                        aria-label="Toggle color theme">
-                        <svg class="theme-toggle-icon-dark h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
-                        </svg>
-                        <svg class="theme-toggle-icon-light h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25M12 18.75V21M4.22 4.22l1.59 1.59M18.19 18.19l1.59 1.59M3 12h2.25M18.75 12H21M4.22 19.78l1.59-1.59M18.19 5.81l1.59-1.59M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                        </svg>
-                        <span>Theme</span>
-                    </button>
-
                     <a
                         href="https://github.com/richardpjames"
                         class="theme-hover-accent-soft inline-flex items-center gap-2 rounded-full border theme-accent-border theme-accent-soft px-4 py-2 text-sm font-medium theme-accent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2"
@@ -241,24 +179,10 @@ $current_url = trailingslashit(home_url(add_query_arg([], $wp->request ?? '')));
                     <?php endforeach; ?>
                 </div>
 
-                <div class="mt-4 flex gap-3 border-t theme-border pt-4">
-                    <button
-                        type="button"
-                        class="theme-toggle theme-hover-surface theme-hover-strong inline-flex flex-1 items-center justify-center gap-2 rounded-full border theme-border theme-surface-3 px-4 py-3 text-sm font-medium theme-text-muted transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2"
-                        style="--tw-ring-offset-color: var(--surface-2);"
-                        aria-label="Toggle color theme">
-                        <svg class="theme-toggle-icon-dark h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
-                        </svg>
-                        <svg class="theme-toggle-icon-light h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25M12 18.75V21M4.22 4.22l1.59 1.59M18.19 18.19l1.59 1.59M3 12h2.25M18.75 12H21M4.22 19.78l1.59-1.59M18.19 5.81l1.59-1.59M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                        </svg>
-                        <span>Theme</span>
-                    </button>
-
+                <div class="mt-4 border-t theme-border pt-4">
                     <a
                         href="https://github.com/richardpjames"
-                        class="theme-hover-accent-soft inline-flex flex-1 items-center justify-center gap-2 rounded-full border theme-accent-border theme-accent-soft px-4 py-3 text-sm font-medium theme-accent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2"
+                        class="theme-hover-accent-soft inline-flex w-full items-center justify-center gap-2 rounded-full border theme-accent-border theme-accent-soft px-4 py-3 text-sm font-medium theme-accent transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2"
                         style="--tw-ring-offset-color: var(--surface-2);">
                         <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true">
                             <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.08 1.83 1.22 1.83 1.22 1.06 1.8 2.78 1.28 3.46.98.11-.77.42-1.28.76-1.57-2.67-.3-5.47-1.32-5.47-5.89 0-1.3.47-2.37 1.22-3.21-.12-.3-.53-1.52.12-3.16 0 0 1-.32 3.3 1.23A11.52 11.52 0 0 1 12 6.32c1.02 0 2.05.14 3.01.4 2.3-1.55 3.3-1.23 3.3-1.23.65 1.64.24 2.86.12 3.16.76.84 1.22 1.91 1.22 3.21 0 4.58-2.8 5.58-5.48 5.88.43.37.81 1.09.81 2.2v3.27c0 .32.22.69.83.58A12 12 0 0 0 12 .5Z" />
@@ -275,19 +199,6 @@ $current_url = trailingslashit(home_url(add_query_arg([], $wp->request ?? '')));
         const menu = document.getElementById('mobile-menu');
         const openIcon = document.getElementById('menu-open-icon');
         const closeIcon = document.getElementById('menu-close-icon');
-        const themeButtons = document.querySelectorAll('.theme-toggle');
-
-        const applyTheme = (theme) => {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('site-theme', theme);
-        };
-
-        themeButtons.forEach((toggleButton) => {
-            toggleButton.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-                applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-            });
-        });
 
         button.addEventListener('click', () => {
             const isOpen = button.getAttribute('aria-expanded') === 'true';
@@ -317,3 +228,4 @@ $current_url = trailingslashit(home_url(add_query_arg([], $wp->request ?? '')));
             }
         });
     </script>
+f
