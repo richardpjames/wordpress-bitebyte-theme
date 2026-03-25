@@ -1,6 +1,16 @@
     <?php get_header(); ?>
 
     <main class="site-content max-w-7xl mx-auto">
+
+
+
+        <?php if (is_category()) : ?>
+            <?php get_template_part('template-parts/hero', null, [
+                'heading' => single_cat_title('',false),
+                'text' => wp_strip_all_tags(category_description()),
+            ]); ?>
+        <?php endif; ?>
+
         <?php
         if (have_posts()) : ?>
             <div class=" mx-auto px-5 mt-5 mb-5 grid grid-cols-1 md:grid-cols-3">
