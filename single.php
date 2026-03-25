@@ -17,45 +17,45 @@
                 'text' => get_the_excerpt(),
             ]); ?>
 
-            <article class="mx-5 mt-6 lg:mt-8" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article class="mx-5 mt-6 mb-10 lg:mt-8 lg:mb-14" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <div class="grid gap-6 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-10">
-                    <aside class="h-fit rounded-[1.5rem] border border-white/10 bg-[#111714] p-5 text-sm text-zinc-300 shadow-xl shadow-black/20 lg:sticky lg:top-28">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-sky-300/80">
+                    <aside class="theme-surface-2 theme-card-shadow h-fit rounded-[1.5rem] border theme-border p-5 text-sm theme-text-body lg:sticky lg:top-28">
+                        <p class="theme-accent text-xs font-semibold uppercase tracking-[0.24em]">
                             Post details
                         </p>
                         <div class="mt-5 space-y-5">
                             <div>
-                                <p class="text-xs uppercase tracking-[0.18em] text-zinc-500">Category</p>
-                                <p class="mt-2 text-base font-medium text-white"><?php echo esc_html($primary_category); ?></p>
+                                <p class="theme-text-soft text-xs uppercase tracking-[0.18em]">Category</p>
+                                <p class="theme-text-strong mt-2 text-base font-medium"><?php echo esc_html($primary_category); ?></p>
                             </div>
                             <div>
-                                <p class="text-xs uppercase tracking-[0.18em] text-zinc-500">Published</p>
-                                <p class="mt-2 text-base font-medium text-white"><?php echo esc_html(get_the_date('F j, Y')); ?></p>
+                                <p class="theme-text-soft text-xs uppercase tracking-[0.18em]">Published</p>
+                                <p class="theme-text-strong mt-2 text-base font-medium"><?php echo esc_html(get_the_date('F j, Y')); ?></p>
                             </div>
                             <div>
-                                <p class="text-xs uppercase tracking-[0.18em] text-zinc-500">Read time</p>
-                                <p class="mt-2 text-base font-medium text-white"><?php echo esc_html($reading_time . ' min read'); ?></p>
+                                <p class="theme-text-soft text-xs uppercase tracking-[0.18em]">Read time</p>
+                                <p class="theme-text-strong mt-2 text-base font-medium"><?php echo esc_html($reading_time . ' min read'); ?></p>
                             </div>
                         </div>
                     </aside>
 
-                    <div class="rounded-[1.75rem] border border-white/10 bg-[#111714] p-6 shadow-xl shadow-black/20 sm:p-8 lg:p-10">
-                        <div class="border-b border-white/10 pb-6">
-                            <p class="text-sm leading-7 text-zinc-400">
-                                Published on <span class="font-medium text-zinc-200"><?php echo esc_html(get_the_date('F j, Y')); ?></span>
-                                in <span class="font-medium text-sky-300"><?php echo esc_html($primary_category); ?></span>.
+                    <div class="theme-surface-2 theme-card-shadow rounded-[1.75rem] border theme-border p-6 sm:p-8 lg:p-10">
+                        <div class="border-b theme-border pb-6">
+                            <p class="theme-text-muted text-sm leading-7">
+                                Published on <span class="theme-text-body font-medium"><?php echo esc_html(get_the_date('F j, Y')); ?></span>
+                                in <span class="theme-accent font-medium"><?php echo esc_html($primary_category); ?></span>.
                             </p>
                         </div>
 
-                        <div class="entry-content prose prose-invert mt-8 max-w-3xl prose-headings:text-white prose-p:text-zinc-300 prose-strong:text-white prose-a:text-sky-300">
+                        <div class="entry-content theme-prose mt-8 max-w-3xl prose">
                             <?php the_content(); ?>
                         </div>
 
-                        <div class="mt-10 border-t border-white/10 pt-6">
+                        <div class="mt-10 border-t theme-border pt-6">
                             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                 <a
                                     href="<?php echo esc_url(get_permalink(get_option('page_for_posts') ?: home_url('/'))); ?>"
-                                    class="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition hover:text-white">
+                                    class="theme-text-muted inline-flex items-center gap-2 text-sm font-medium transition hover:opacity-80">
                                     <span aria-hidden="true">&larr;</span>
                                     <span>Back to posts</span>
                                 </a>
@@ -64,7 +64,7 @@
                                     <?php if ($previous_post) : ?>
                                         <a
                                             href="<?php echo esc_url(get_permalink($previous_post)); ?>"
-                                            class="text-sm text-zinc-400 transition hover:text-sky-300">
+                                            class="theme-text-muted theme-hover-accent text-sm transition">
                                             Previous: <?php echo esc_html(get_the_title($previous_post)); ?>
                                         </a>
                                     <?php endif; ?>
@@ -72,7 +72,7 @@
                                     <?php if ($next_post) : ?>
                                         <a
                                             href="<?php echo esc_url(get_permalink($next_post)); ?>"
-                                            class="text-sm text-zinc-400 transition hover:text-sky-300">
+                                            class="theme-text-muted theme-hover-accent text-sm transition">
                                             Next: <?php echo esc_html(get_the_title($next_post)); ?>
                                         </a>
                                     <?php endif; ?>

@@ -5,8 +5,8 @@ $recent_posts = new WP_Query(array(
 ));
 
 if ($recent_posts->have_posts()) : ?>
-    <h2 class="text-center text-5xl text-white">Latest Posts</h2>
-    <p class="text-center text-zinc-400">View the latest posts from across the blog</p>
+    <h2 class="theme-text-strong text-center text-5xl">Latest Posts</h2>
+    <p class="theme-text-muted text-center">View the latest posts from across the blog</p>
     <div class="mx-auto mb-5 grid max-w-7xl grid-cols-1 gap-6 px-5 md:grid-cols-3">
 
         <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
