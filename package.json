@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx chokidar '**/*.php' -c 'npm run build && npm run deploy'",
     "deploy": "npm run build && rm -r /var/www/blog/wp-content/themes/wordpress-bitebyte-theme/* && cp -r ./* /var/www/blog/wp-content/themes/wordpress-bitebyte-theme",
-    "build": "npx @tailwindcss/cli -i style.css -o assets/css/tailwind.css"
+    "build": "npx @tailwindcss/cli -i style.css -o css/tailwind.css"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.2.2",

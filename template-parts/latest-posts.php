@@ -1,0 +1,30 @@
+<?php
+$recent_posts = new WP_Query(array(
+    'post_type' => 'post',
+    'posts_per_page' => 6,
+));
+
+if ($recent_posts->have_posts()) : ?>
+    <h2 class="text-5xl text-center">Latest Posts</h2>
+    <p class="text-center">View the latest posts from across the blog</p>
+    <div class="max-w-7xl mx-auto px-5 mb-5 grid grid-cols-1 md:grid-cols-3">
+
+        <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
+            <article class="rounded-2xl border border-gray-700 p-5 m-2 col-span-1 bg-gray-800" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <div>
+                    <h2 class="mt-2 text-lg text-white max-lg:text-center">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h2>
+                    <div class="mt-2 max-w-lg text-sm/6">
+                        <?php the_excerpt(); ?>
+                    </div>
+                </div>
+            </article>
+        <?php endwhile; ?>
+    <?php else : ?>
+        <p class="text-6xl px-5  mx-auto text-center pb-5">404</p>
+        <p class="text-center">Sorry, the page you are looking for does not exist.</p>
+    <?php endif; ?>
+    </div>
+
+    <?php wp_reset_postdata(); ?>
