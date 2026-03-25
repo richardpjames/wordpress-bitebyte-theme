@@ -33,7 +33,7 @@ $published_date = $post_id ? get_the_date('F j, Y', $post_id) : '';
 
     <div class="mt-8 flex items-center justify-between border-t border-white/10 pt-4">
         <span class="text-sm font-medium text-zinc-500">
-            Read article
+            Read more
         </span>
         <a
             class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sky-300 transition duration-200 group-hover:border-sky-500/30 group-hover:bg-sky-500/10 group-hover:text-sky-200"
