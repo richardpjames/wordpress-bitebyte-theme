@@ -73,8 +73,6 @@
                     foreach ($items as $item) : ?>
 
                         <a href="<?php echo $item->url; ?>" class="block rounded-md px-3 py-2 text-sm text-zinc-300 hover:bg-white/5 hover:text-white">
-                            <?php if ($item->title == 'Food') echo '<i class="fa-solid fa-burger"></i>'; ?>
-                            <?php if ($item->title == 'Technology') echo '<i class="fa-solid fa-laptop"></i>'; ?>
                             <?php echo $item->title; ?>
                         </a>
 
