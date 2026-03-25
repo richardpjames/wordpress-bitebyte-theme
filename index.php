@@ -1,29 +1,21 @@
     <?php get_header(); ?>
 
     <main class="site-content max-w-7xl mx-auto">
-
         <?php
         if (have_posts()) : ?>
-
             <div class=" mx-auto px-5 mt-5 mb-5 grid grid-cols-1 md:grid-cols-3">
                 <?php while (have_posts()) : the_post(); ?>
-                    <article class="rounded-2xl border border-gray-700 p-5 m-2 col-span-1 bg-gray-800" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <div>
-                            <h2 class="mt-2 text-lg text-white max-lg:text-center">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h2>
-                            <div class="mt-2 max-w-lg text-sm/6">
-                                <?php the_excerpt(); ?>
-                            </div>
-                        </div>
-                    </article>
+                    <?php get_template_part('template-parts/post-card', null, [
+                        'post_id' => get_the_ID(),
+                        'permalink' => get_permalink(),
+                        'title' => get_the_title(),
+                        'excerpt' => get_the_excerpt(),
+                    ]); ?>
                 <?php endwhile; ?>
             <?php else : ?>
-                <p class="text-6xl px-5  mx-auto text-center pb-5">404</p>
-                <p class="text-center">Sorry, the page you are looking for does not exist.</p>
+                <?php get_template_part('template-parts/404'); ?>
             <?php endif; ?>
             </div>
-
     </main>
 
     <?php get_footer(); ?>
