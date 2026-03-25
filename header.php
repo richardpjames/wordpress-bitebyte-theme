@@ -143,7 +143,7 @@ $current_url = trailingslashit(home_url(add_query_arg([], $wp->request ?? '')));
 
     <nav class="sticky top-0 z-50 border-b theme-border backdrop-blur-xl" style="background: color-mix(in srgb, var(--surface-1) 85%, transparent);">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-4">
+            <div class="grid h-20 grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[1fr_auto_1fr]">
                 <a
                     href="<?php echo esc_url(home_url('/')); ?>"
                     class="inline-flex items-center justify-self-start rounded-full px-1 text-3xl font-medium tracking-tight theme-text-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 focus-visible:ring-offset-2"
