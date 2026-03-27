@@ -10,6 +10,8 @@
             $reading_time = max(1, (int) ceil($word_count / 200));
             $previous_post = get_previous_post();
             $next_post = get_next_post();
+            $posts_page_id = (int) get_option('page_for_posts');
+            $back_to_posts_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('/');
             ?>
 
             <?php get_template_part('template-parts/hero', null, [
@@ -54,10 +56,10 @@
                         <div class="mt-10 border-t theme-border pt-6">
                             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                 <a
-                                    href="<?php echo esc_url(get_permalink(get_option('page_for_posts') ?: home_url('/'))); ?>"
+                                    href="<?php echo esc_url($back_to_posts_url); ?>"
                                     class="theme-text-muted inline-flex items-center gap-2 text-sm font-medium transition hover:opacity-80">
                                     <span aria-hidden="true">&larr;</span>
-                                    <span>Back to posts</span>
+                                    <span>Back to Home</span>
                                 </a>
 
                                 <div class="flex flex-col gap-3 sm:items-end">
